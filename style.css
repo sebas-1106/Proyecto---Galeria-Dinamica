@@ -1,0 +1,66 @@
+:root{
+    --root-color1: #BD9669;
+    --root-color2: #F7F7F7;
+    --root-color3: #FFFFFF;
+    --root-color4: #A0834E;
+    --root-color5: #0B0B0B;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body{
+    background-color: var(--root-color5);
+}
+#logo{
+    width: 200px;
+    border-radius: 300px;
+
+}
+#principalTitle{
+    color: var(--root-color1);
+    text-align: center;
+    font-size: 40px;
+    font-family: var(--root-font-family);
+}
+#contanier{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    width: 80%;
+    margin-bottom: 20px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+#filterSection {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    background-color: var(--root-color2);
+    padding: 20px;
+    border-radius: 10px;
+    align-self: start; /* ← Evita que se estire con la grid */
+    height: fit-content; /* ← Hace que solo mida lo que su contenido necesita */
+}
+#contanier img{
+    width: 100%;
+    height: 280px;
+    object-fit:cover; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+.productsSection{
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#productsWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
