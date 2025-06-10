@@ -5,9 +5,16 @@ const h1 = document.querySelector('h1');
 h1.id = 'principalTitle';
 const imgLogo = document.createElement('img');
 imgLogo.id = 'logo';
+const h3Section = document.createElement('section');
+h3Section.id = 'h3Section';
+const h3 = document.createElement('h3');
+h3.id = 'subTitle';
+h3.textContent = '"Bienvenidos a Acevedo & Co. El epicentro del lujo relojero donde las leyendas como Audemars Piguet, Cartier, Hublot, Jacob & Co., Richard Mille y Rolex cobran vida. Sumérgete en un mundo de elegancia extrema, innovación pura y estilo que grita poder, perfecto para los que saben que el tiempo es arte y prestigio en cada tic-tac."'
 imgLogo.src = 'assets/Logo_Relojeria.png';
 header.appendChild(imgLogo);
-header.appendChild(h1)
+header.appendChild(h1);
+header.appendChild(h3Section);
+h3Section.appendChild(h3);
 
 
 
@@ -23,7 +30,14 @@ const productsWrapper = document.createElement('div');
 productsWrapper.id = 'productsWrapper';
 principalSection.appendChild(productsWrapper);
 
-const marcas = ['Audemars Piguet', 'Cartier', 'Hublot', 'Jacob And Co', 'Richard_Mille', 'Rolex' ];
+
+const input = document.createElement('input');
+input.type = 'checkbox';
+const label = document.createElement('label');
+label.textContent = 'Todas las marcas';
+filterSection.appendChild(label);
+filterSection.appendChild(input);
+const marcas = ['Audemars Piguet', 'Cartier', 'Hublot', 'Jacob And Co', 'Richard Mille', 'Rolex' ];
 for (const element of marcas) {
     const input = document.createElement('input');
     input.type = 'checkbox';
@@ -39,25 +53,31 @@ const products = [
         name: "Audemars Piguet Royal Oak Chronograph",
         price: "$150,000",
         image: "assets/Watches/AP/Audemars_Piguet_Royal_Oak_Chronograph.png",
-        category: "Watches"
+        category: "Audemars Piguet Royal Oak"
     },
     {
         name: "Audemars Piguet Royal Oak Concept Spiderman",
         price: "$180,000",
         image: "assets/Watches/AP/Audemars_Piguet_Royal_Oak_Concept_spiderman.png",
-        category: "Watches"
+        category: "Audemars Piguet Royal Oak"
     },
     {
         name: "Audemars Piguet Royal Oak Concept",
         price: "$175,000",
         image: "assets/Watches/AP/Audemars_Piguet_Royal_Oak_Concept.png",
-        category: "Watches"
+        category: "Audemars Piguet Royal Oak"
     },
     {
         name: "Audemars Piguet Royal Oak Black Panther White Gold",
         price: "$250,000",
         image: "assets/Watches/AP/audemars-piguet-Royal-Black-Panther-white-gold.jpg",
-        category: "Watches"
+        category: "Audemars Piguet Royal Oak"
+    },
+    {
+        name : "AAudemars Piguet Royal Oak Double Balance Wheel Openworked",
+        price: "$150,000",
+        image: "assets/Watches/AP/Audemars_Piguet_Royal_Oak_Double_Balance_Wheel_Openworked.png",
+        category : "Audemars Piguet Royal Oak"
     },
 
     // --- Cartier ---
@@ -65,19 +85,19 @@ const products = [
         name: "Cartier Santos Aftermarket Diamonds",
         price: "$95,000",
         image: "assets/Watches/Cartier/Cartier_santos_Aftermarket_Diamonds.png",
-        category: "Watches"
+        category: "Cartier"
     },
     {
         name: "Cartier Santos Circones Negro Tablero Dorado",
         price: "$90,000",
         image: "assets/Watches/Cartier/Cartier_Santos_Circones_Negro_Tablero_Dorado.png",
-        category: "Watches"
+        category: "Cartier"
     },
     {
         name: "Cartier Santos Circones Negros",
         price: "$85,000",
         image: "assets/Watches/Cartier/cartier_santos_circones_negros.png",
-        category: "Watches"
+        category: "Cartier"
     },
 
     // --- Hublot ---
@@ -85,109 +105,133 @@ const products = [
         name: "Hublot Big Bang Ferrari",
         price: "$130,000",
         image: "assets/Watches/Hublot/Hublot_Big_Bang_Ferrari.png",
-        category: "Watches"
+        category: "Hublot"
     },
     {
         name: "Hublot Big Bang Meca-10",
         price: "$140,000",
         image: "assets/Watches/Hublot/Hublot_Big_Bang_Meca_10.png",
-        category: "Watches"
+        category: "Hublot"
     },
     {
         name: "Hublot Big Bang Unico",
         price: "$135,000",
         image: "assets/Watches/Hublot/Hublot_Big_Bang_Unico.png",
-        category: "Watches"
+        category: "Hublot"
     },
     {
         name: "Hublot Classic Fusion Chronograph",
         price: "$125,000",
         image: "assets/Watches/Hublot/Hublot_Classic_Fusion_Chronograph.png",
-        category: "Watches"
+        category: "Hublot"
     },
 
     // --- Jacob & Co ---
     {
         name: "Jacob & Co Skull Double Tourbillion Gold",
         price: "$270,000",
-        image: "assets/Watches/Jacob_And_Co/Skull_Double_Tourbillion_Gold.webp",
-        category: "Watches"
+        image: "assets/Watches/Jacob_And_Co/Skull_Double_Tourbillion_Gold.png",
+        category: "Jacon And Co"
+    },
+    {
+        name : "Billionaire III Limited Edition",
+        price: "$1,000,000",
+        image: "assets/Watches/Jacob_And_Co/Billionaire_III_Limited_Edition.png",
+        category: "Jacon And Co"
+    },
+    {
+        name : "Bugatti Chiron Tourbillon Blue",
+        price: "$1,300,000",
+        image: "assets/Watches/Jacob_And_Co/Bugatti_Chiron_Tourbillon_Blue.png",
+        category: "Jacon And Co"
+    },
+    {
+        name : "CR7 Rose Gold Limited Edition (2024)",
+        price: "$650,000",
+        image: "assets/Watches/Jacob_And_Co/CR7_Rose_Gold_Limited_Edition_(2024).png",
+        category: "Jacon And Co"
+    },
+    {
+        name : "Full Set Skeleton 44mm Titanium Sky Blue",
+        price: "$550,000",
+        image: "assets/Watches/Jacob_And_Co/Full_Set_Skeleton_44mm_Titanium_Sky_Blue.png",
+        category: "Jacon And Co"
     },
 
     // --- Richard Mille ---
     {
-        name: "Richard Mille Dragón Circones Negro Tablero Dorado",
+        name: "RM11 03 Ultimate Edition",
         price: "$320,000",
-        image: "assets/Watches/Richard_Mille/Richar_Mille_Dragón_Circones_Negro_Tablero_Dorado.png",
-        category: "Watches"
+        image: "assets/Watches/Richard_Mille/RM11_03_Ultimate_Edition.png",
+        category: "Richard Mille"
     },
     {
-        name: "Richard Mille Dragón Circones Blanco Tablero Dorado",
+        name: "Rm Factory Baguette Diamonds",
         price: "$315,000",
-        image: "assets/Watches/Richard_Mille/Richard_Mille_Dragón_Circones_Blanco_Tablero_Dorado.png",
-        category: "Watches"
+        image: "assets/Watches/Richard_Mille/Rm_Factory_Baguette_Diamonds.png",
+        category: "Richard Mille"
     },
     {
         name: "Richard Mille RM 035",
         price: "$400,000",
         image: "assets/Watches/Richard_Mille/Richard_Mille_RM_035.png",
-        category: "Watches"
+        category: "Richard Mille"
     },
     {
         name: "Richard Mille Bebé Azul Cerámica",
         price: "$380,000",
         image: "assets/Watches/Richard_Mille/Richard_Mille_RM_Bebé_Azul_Cerámica.png",
-        category: "Watches"
+        category: "Richard Mille"
     },
     {
         name: "Richard Mille Tourbillon Rafael Nadal",
         price: "$450,000",
         image: "assets/Watches/Richard_Mille/Richard_Mille_Tourbillon_Rafael_Nadal.png",
-        category: "Watches"
+        category: "Richard Mille"
     },
 
     // --- Rolex ---
     {
         name: "Rolex Datejust Chocolate",
-        price: "$70,000",
+        price: "$14,500",
         image: "assets/Watches/Rolex/Rolex_datejust_chocolate.png",
-        category: "Watches"
+        category: "Rolex"
     },
     {
         name: "Rolex Datejust Limited",
-        price: "$80,000",
+        price: "$17,000",
         image: "assets/Watches/Rolex/Rolex_datejust_limited.png",
-        category: "Watches"
+        category: "Rolex"
     },
     {
         name: "Rolex Daytona New Service",
-        price: "$110,000",
+        price: "$36,000",
         image: "assets/Watches/Rolex/Rolex_Daytona_New_Service.png",
-        category: "Watches"
+        category: "Rolex"
     },
     {
         name: "Rolex Daytona Platinum Ice Blue",
-        price: "$150,000",
+        price: "$28,000",
         image: "assets/Watches/Rolex/Rolex_Daytona_Platinum_Ice_Blue.png",
-        category: "Watches"
+        category: "Rolex"
     },
     {
         name: "Rolex GMT Master II Yellow Gold",
-        price: "$135,000",
+        price: "$55,000",
         image: "assets/Watches/Rolex/Rolex_GMT_Master_II_Yellow_Gold.png",
-        category: "Watches"
+        category: "Rolex"
     },
     {
         name: "Rolex GMT Master II",
-        price: "$132,000",
+        price: "$45,000",
         image: "assets/Watches/Rolex/Rolex_GMT_Master_II.png",
-        category: "Watches"
+        category: "Rolex"
     },
     {
         name: "Rolex Submariner Date",
-        price: "$120,000",
+        price: "$50,000",
         image: "assets/Watches/Rolex/Rolex_Submariner_Date.png",
-        category: "Watches"
+        category: "Rolex"
     }
 ];
 for (const product of products) {
@@ -206,10 +250,13 @@ for (const product of products) {
     const pCategory = document.createElement('p');
     pCategory.textContent = product.category;
     pCategory.id = 'category';
+    pButton = document.createElement('button');
+    pButton.id = 'productsButton';
+    pButton.textContent = "Buy Now";
     productsWrapper.appendChild(producsSection);
     producsSection.appendChild(image)
     producsSection.appendChild(h3);
     producsSection.appendChild(pPrice)
-    
     producsSection.appendChild(pCategory)
+    producsSection.appendChild(pButton);
 }
