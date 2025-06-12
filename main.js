@@ -260,3 +260,75 @@ for (const product of products) {
     producsSection.appendChild(pCategory)
     producsSection.appendChild(pButton);
 }
+
+const footer = document.createElement('footer');
+const pFooter = document.createElement('p');
+pFooter.id= 'pFooter';
+footer.appendChild(pFooter);
+body.appendChild(footer);
+
+const Button = (icon, text, link) => {
+  const button = document.createElement("button");
+  button.className = "my-btn";
+  
+  const anchor = document.createElement("a");
+  anchor.href = link;
+  anchor.target = "_blank";
+  anchor.rel = "noopener noreferrer";
+  
+  const img = document.createElement("img");
+  img.src = icon;
+  img.alt = `${text} icon`;
+  
+  const h4 = document.createElement("h4");
+  h4.textContent = text;
+  
+  anchor.appendChild(img);
+  anchor.appendChild(h4);
+  button.appendChild(anchor);
+  
+  return button;
+};
+
+const Footer = () => {
+  const footer = document.createElement("footer");
+  
+  const h2 = document.createElement("h2");
+  h2.textContent = "Contact";
+  
+  const div = document.createElement("div");
+  
+  div.appendChild(Button(
+    "./assets/icons/WhatsApp.png",
+    "WhatsApp",
+    "https://wa.me/34613159996"
+  ));
+  div.appendChild(Button(
+    "./assets/icons/github.png",
+    "GitHub",
+    "https://github.com/sebas-1106"
+  ));
+  div.appendChild(Button(
+    "./assets/icons/linkedin.png",
+    "LinkedIn",
+    "https://www.linkedin.com/in/sebastian-acevedo-ben%C3%ADtez-a3752732a/"
+  ));
+  div.appendChild(Button(
+    "https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png",
+    "Instagram",
+    "https://www.instagram.com/sebas_ace1106/"
+  ));
+  
+  const pFooter = document.createElement("p");
+  pFooter.id = "pFooter";
+  pFooter.textContent = "Copyright 2025. All rights reserved. Developed by Sebastian Acevedo Benítez.";
+  
+  footer.appendChild(h2);
+  footer.appendChild(div);
+  footer.appendChild(pFooter);
+  
+  return footer;
+};
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.appendChild(Footer());
+});
